@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "quiz")
-public class Quiz{
+public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -24,24 +24,27 @@ public class Quiz{
     @OneToMany(mappedBy = "quiz")
     private Set<Questao> questoes = new HashSet<>();
 
-    public void setId(long id){
+    public void setId(long id) {
         this.id = id;
     }
-    public long getId(){
+
+    public long getId() {
         return this.id;
     }
 
-    public void setNome(String nome){
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getNome(){
+
+    public String getNome() {
         return this.nome;
     }
 
-    public void setQuestao(Set<Questao> questao){
-        this.questoes = questao;
+    public void setQuestoes(Set<Questao> questoes) {
+        this.questoes = questoes;
     }
-    public Set<Questao> getQuestao(){
+
+    public Set<Questao> getQuestoes() {
         return this.questoes;
     }
 }
